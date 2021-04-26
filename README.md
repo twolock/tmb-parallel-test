@@ -1,13 +1,6 @@
 # Testing parallel TMB templates
 
- A small repository to test compare serial and parallel templates in TMB. The R script `fit_models.R` fits a statistical model using four statistical identical TMB templates. The model is typical Bayesian linear regression:
-$$
-y_i \sim \mathrm N(\mu_i, \sigma^2)
-$$
-where $\mu_i$ is modeled linearly:
-$$
-\mu_i = \beta X_i.
-$$
+ A small repository to test compare serial and parallel templates in TMB. The R script `fit_models.R` fits a statistical model using four mathematically identical TMB templates. The model is typical Bayesian linear regression.
 By default, $X$ has 100 columns and a number of rows ranging from 1,000 to 20,000.
 
 The four templates (in `cpp/`) vary in how the negative log-posterior density is calculated and in parallelism. In the two parallel templates, `nll` is a `parallel_accumulator`:
